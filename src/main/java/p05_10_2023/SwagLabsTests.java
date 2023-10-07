@@ -1,9 +1,12 @@
 package p05_10_2023;
 
+import d02_10_2023.UrlHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -12,7 +15,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 //Kreirati klasu SwagLabsTests https://www.saucedemo.com/
 public class SwagLabsTests {
@@ -245,9 +251,36 @@ public class SwagLabsTests {
                         .getText(),
                 "Thank you for your order!", "Message should be equal to: Thank you for your order!");
     }
+//Test #10:  Validate Social Links in Footer
+    @Test
+    public void validateSocialLinksInFooter() throws IOException {
+        String username = "standard_user";
+        String password = "secret_sauce";
 
+        driver.findElement(By.name("user-name")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.id("login-button")).click();
+
+        wait.until(ExpectedConditions.urlContains("/inventory.html"));
+        wait.withMessage("Url doesn't contain /inventory.html");
+
+        new Actions(driver).scrollToElement(driver.findElement(By.cssSelector("#page_wrapper > footer"))).perform();
+
+
+        String twitterLink = driver.findElement(By.cssSelector(".social_twitter>a")).getAttribute("href");
+        String facebookLink = driver.findElement(By.cssSelector(".social_facebook>a")).getAttribute("href");
+        String linkedinLink = driver.findElement(By.cssSelector(".social_linkedin>a")).getAttribute("href");
+
+        int statusCodeTwitter = UrlHelper.getHTTPResponseStatusCode(twitterLink);
+        int statusCodeFacebook = UrlHelper.getHTTPResponseStatusCode(facebookLink);
+        int statusCodeLinkedin = UrlHelper.getHTTPResponseStatusCode(linkedinLink);
+
+        Assert.assertEquals(statusCodeTwitter, 200, "Response code for Twitter should be 200");
+        Assert.assertEquals(statusCodeFacebook, 200, "Response code for Facebook should be 200");
+        Assert.assertEquals(statusCodeLinkedin, 200, "Response code for Linkedin should be 200");
+    }
     @AfterClass
     public void afterClass() {
         driver.quit();
-    }
+   }
 }
