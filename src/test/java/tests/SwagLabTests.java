@@ -598,4 +598,18 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(loginPage.getCurrentUrl(), url + "checkout-step-one.html",
                 "Should be redirected to Checkout page");
     }
+    //Cart page sheet #33
+    @Test
+    public void verifyIfTheTwitterButtonIsPresented () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        footer.scrollToFooter();
+        footer.waitForTwitterIconToBeVisible();
+
+    }
 }
