@@ -136,5 +136,17 @@ public void verifySuccessfulLogin() {
                 "Swag Labs",
                 "Title in header should be Swag Labs");
     }
+    //Cart page sheet #4
+    @Test
+    public void verifyIfTheHamburgerMenuButtonIsPresented() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.waitForBurgerButton();
     }
+}
 
