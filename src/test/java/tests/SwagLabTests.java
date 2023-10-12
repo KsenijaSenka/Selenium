@@ -197,9 +197,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(topNavPage.isCartIconEnabled(),
                 "Cart icon should be enabled");
     }
+
     //Cart page sheet #8
     @Test
-    public void verifyIfTheHamburgerButtonIsWorking () {
+    public void verifyIfTheHamburgerButtonIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -210,9 +211,10 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnBurger();
         leftNavPage.waitLeftNavMenu();
     }
+
     //Cart page sheet #9
     @Test
-    public void verifyIfTheCartIconIsWorking () {
+    public void verifyIfTheCartIconIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -225,6 +227,7 @@ public class SwagLabTests extends BasicTest {
                 url + "/cart.html",
                 "Should redirect to cart page after clicking the cart icon.");
     }
+
     //Cart page sheet #10
     @Test
     public void verifyIfTheCartIconHasCorrectNumberOfAddedItems() {
@@ -246,9 +249,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(itemsAfter, itemsBefore + 1,
                 "Number of items in the cart should be increased");
     }
+
     //Cart page sheet #11
     @Test
-    public void verifyTheSubHeaderTitle () {
+    public void verifyTheSubHeaderTitle() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -260,9 +264,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(topNavPage.getSubheaderTitleText(), "Your Cart",
                 "Subheader title should be: 'Your Cart'");
     }
+
     //Cart page sheet #12
     @Test
-    public void verifyTheTotalNumberOfMenuOptions () {
+    public void verifyTheTotalNumberOfMenuOptions() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -276,9 +281,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(leftNavPage.getNumberOfMenuOptions(), 4,
                 "Total number of options in menu should be four.");
     }
+
     //Cart page sheet #13
     @Test
-    public void verifyTheSpellingOfAllOptionsInMenu () {
+    public void verifyTheSpellingOfAllOptionsInMenu() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -293,9 +299,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(leftNavPage.spellingOfOptions(),
                 "Spelling of options in menu is incorrect.");
     }
+
     //Cart page sheet #14
     @Test
-    public void verifyIfAllItemsOptionIsWorking () {
+    public void verifyIfAllItemsOptionIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -312,9 +319,10 @@ public class SwagLabTests extends BasicTest {
                 url + "/inventory.html",
                 "Should redirect to the products page.");
     }
+
     //Cart page sheet #15
     @Test
-    public void verifyIfAboutOptionIsWorking () {
+    public void verifyIfAboutOptionIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -332,9 +340,10 @@ public class SwagLabTests extends BasicTest {
                 "https://saucelabs.com/",
                 "Should redirect to the sauce labs website");
     }
+
     //Cart page sheet #16
     @Test
-    public void verifyIfLogoutOptionIsWorking () {
+    public void verifyIfLogoutOptionIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -352,9 +361,10 @@ public class SwagLabTests extends BasicTest {
                 "Should redirect to login page");
 
     }
+
     //Cart page sheet #17
     @Test
-    public void verifyIfResetAppStateIsWorking () {
+    public void verifyIfResetAppStateIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -373,9 +383,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(doesBadgeExistAfterReset,
                 !doesBadgeExist, "Reset option should reset the app");
     }
+
     //Cart page sheet #18
     @Test
-    public void verifyIfTheEkisButtonIsPresented(){
+    public void verifyIfTheEkisButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -386,9 +397,10 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnBurger();
         leftNavPage.waitXButton();
     }
+
     //Cart page sheet #19
     @Test
-    public void verifyIfTheEkisButtonsIsWorking () {
+    public void verifyIfTheEkisButtonsIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -401,9 +413,10 @@ public class SwagLabTests extends BasicTest {
         leftNavPage.clickXButton();
         leftNavPage.waitLeftNavMenuDissapears();
     }
+
     //Cart page sheet #20
     @Test
-    public void verifyIfTheItemsAddedIsPresented () {
+    public void verifyIfTheItemsAddedIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -416,9 +429,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Added items should be on the page.");
     }
+
     //Cart page sheet #21
     @Test
-    public void verifyIfTheItemsTitleIsPresented () {
+    public void verifyIfTheItemsTitleIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -431,6 +445,7 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Title of the added item should be visible.");
     }
+
     //Cart page sheet #22
     @Test
     public void verifyIfTheItemsDescriptionIsPresented() {
@@ -445,9 +460,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Description of the item in cart should be visible.");
     }
+
     //Cart page sheet #23
     @Test
-    public void verifyIfTheItemsPriceIsPresented () {
+    public void verifyIfTheItemsPriceIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -459,9 +475,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Price of the item in cart should be visible.");
     }
+
     //Cart page sheet #24
     @Test
-    public void verifyIfTheItemsQuantityIsPresented () {
+    public void verifyIfTheItemsQuantityIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -473,9 +490,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Quantity of the added item should be visible.");
     }
+
     //Cart page sheet #25
     @Test
-    public void verifyIfTheItemsTitleIsClickable () {
+    public void verifyIfTheItemsTitleIsClickable() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -488,9 +506,10 @@ public class SwagLabTests extends BasicTest {
                 "Item should exist in cart");
         cartPage.waitForItemTitleToBeClickable();
     }
+
     //Cart page sheet #26
     @Test
-    public void verifyIfTheItemsTitleIsWorking () {
+    public void verifyIfTheItemsTitleIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -507,9 +526,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(loginPage.getCurrentUrl().contains("inventory-item.html"),
                 "Should be redirected to the item's page.");
     }
+
     //Cart page sheet #27
     @Test
-    public void verifyIfTheRemoveButtonIsPresented () {
+    public void verifyIfTheRemoveButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -521,9 +541,10 @@ public class SwagLabTests extends BasicTest {
         cartPage.waitForRemoveButtonToBeVisible();
 
     }
+
     //Cart page sheet #28
     @Test
-    public void verifyIfTheRemoveButtonIsWorking () {
+    public void verifyIfTheRemoveButtonIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -537,9 +558,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertFalse(cartPage.checkIfAddedItemsExist(),
                 "The item should disappear after removing");
     }
+
     //Cart page sheet #29
     @Test
-    public void verifyIfTheContinueShoppingButtonIsPresented () {
+    public void verifyIfTheContinueShoppingButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -550,6 +572,7 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnCartButton();
         cartPage.waitForContinueShoppingButtonToBeVisible();
     }
+
     //Cart page sheet #30
     @Test
     public void verifyIfTheContinueShoppingButtonIsWorking() {
@@ -568,6 +591,7 @@ public class SwagLabTests extends BasicTest {
         wait.withMessage("Should be redirected to the item's page")
                 .until(ExpectedConditions.urlContains("/inventory.html"));
     }
+
     //Cart page sheet #31
     @Test
     public void verifyIfTheCheckoutButtonIsPresented() {
@@ -581,6 +605,7 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnCartButton();
         cartPage.waitForCheckoutButtonToBeVisible();
     }
+
     //Cart page sheet #32
     @Test
     public void verifyIfTheCheckoutButtonIsWorking() {
@@ -598,9 +623,10 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(loginPage.getCurrentUrl(), url + "checkout-step-one.html",
                 "Should be redirected to Checkout page");
     }
+
     //Cart page sheet #33
     @Test
-    public void verifyIfTheTwitterButtonIsPresented () {
+    public void verifyIfTheTwitterButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -612,9 +638,10 @@ public class SwagLabTests extends BasicTest {
         footer.waitForTwitterIconToBeVisible();
 
     }
+
     //Cart page sheet #34
     @Test
-    public void verifyIfTheFacebookButtonIsPresented () {
+    public void verifyIfTheFacebookButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -626,9 +653,10 @@ public class SwagLabTests extends BasicTest {
         footer.waitForFacebookIconToBeVisible();
 
     }
+
     //Cart page sheet #35
     @Test
-    public void verifyIfTheLinkedinButtonIsPresented () {
+    public void verifyIfTheLinkedinButtonIsPresented() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -640,9 +668,10 @@ public class SwagLabTests extends BasicTest {
         footer.waitForLinkedinIconToBeVisible();
 
     }
+
     //Cart page sheet #36
     @Test
-    public void verifyIfTheTwitterButtonIsWorking () {
+    public void verifyIfTheTwitterButtonIsWorking() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -655,9 +684,10 @@ public class SwagLabTests extends BasicTest {
         footer.clickOnTwitterIcon();
         footer.redirectToTwitter();
     }
+
     //Cart page sheet #37
     @Test
-    public void verifyIfFacebookButtonWorksInTheCartPage(){
+    public void verifyIfFacebookButtonWorksInTheCartPage() {
         String username = "standard_user";
         String password = "secret_sauce";
 
@@ -669,5 +699,21 @@ public class SwagLabTests extends BasicTest {
         footer.waitForFacebookIconToBeVisible();
         footer.clickOnFacebookIcon();
         footer.redirectToFacebook();
+    }
+
+    //Cart page sheet #38
+    @Test
+    public void verifyIfTheLinkedinButtonIsWorking() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        footer.scrollToFooter();
+        footer.waitForLinkedinIconToBeVisible();
+        footer.clickOnLinkedinIcon();
+        footer.redirectToLinkedin();
     }
 }
