@@ -507,4 +507,18 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(loginPage.getCurrentUrl().contains("inventory-item.html"),
                 "Should be redirected to the item's page.");
     }
+    //Cart page sheet #27
+    @Test
+    public void verifyIfTheRemoveButtonIsPresented () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        cartPage.waitForRemoveButtonToBeVisible();
+
+    }
 }
