@@ -488,4 +488,23 @@ public class SwagLabTests extends BasicTest {
                 "Item should exist in cart");
         cartPage.waitForItemTitleToBeClickable();
     }
+    //Cart page sheet #26
+    @Test
+    public void verifyIfTheItemsTitleIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+
+        Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
+                "Item should exist in cart");
+        cartPage.waitForItemTitleToBeClickable();
+
+        Assert.assertTrue(loginPage.getCurrentUrl().contains("inventory-item.html"),
+                "Should be redirected to the item's page.");
+    }
 }
