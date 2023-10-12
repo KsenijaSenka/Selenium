@@ -581,4 +581,21 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnCartButton();
         cartPage.waitForCheckoutButtonToBeVisible();
     }
+    //Cart page sheet #32
+    @Test
+    public void verifyIfTheCheckoutButtonIsWorking() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        cartPage.waitForCheckoutButtonToBeVisible();
+        cartPage.clickCheckoutButton();
+
+        Assert.assertEquals(loginPage.getCurrentUrl(), url + "checkout-step-one.html",
+                "Should be redirected to Checkout page");
+    }
 }
