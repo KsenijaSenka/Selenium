@@ -225,4 +225,25 @@ public class SwagLabTests extends BasicTest {
                 url + "/cart.html",
                 "Should redirect to cart page after clicking the cart icon.");
     }
+    //Cart page sheet #10
+    @Test
+    public void verifyIfTheCartIconHasCorrectNumberOfAddedItems() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+
+        int itemsBefore = topNavPage.getNumberOfItemsFromCart();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        Assert.assertTrue(inventoryPage.checkIfThereIsRemoveButton(),
+                "There should be a remove button");
+
+        int itemsAfter = topNavPage.getNumberOfItemsFromCart();
+
+        Assert.assertEquals(itemsAfter, itemsBefore + 1,
+                "Number of items in the cart should be increased");
+    }
 }
