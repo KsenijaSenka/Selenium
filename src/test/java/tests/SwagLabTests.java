@@ -332,4 +332,24 @@ public class SwagLabTests extends BasicTest {
                 "https://saucelabs.com/",
                 "Should redirect to the sauce labs website");
     }
+    //Cart page sheet #16
+    @Test
+    public void verifyIfLogoutOptionIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+
+        leftNavPage.waitLeftNavMenu();
+        leftNavPage.clickOnLogoutButton();
+
+        Assert.assertTrue(
+                loginPage.doesUsernameInputExist(),
+                "Should redirect to login page");
+
+    }
 }
