@@ -27,7 +27,8 @@ public abstract class BasicTest {
     protected UpdateDialogPage updateDialogPage;
     protected DeleteDialogPage deleteDialogPage;
     protected JavascriptExecutor js;
-
+    protected TopNavPage topNavPage;
+    protected CartPage cartPage;
 
     @BeforeClass
     public void BeforeClass() {
@@ -44,7 +45,8 @@ public abstract class BasicTest {
         leftNavPage = new LeftNavPage(driver, wait);
         inventoryPage = new InventoryPage(driver, wait);
         js = (JavascriptExecutor) driver;
-
+        topNavPage=new TopNavPage(driver,wait);
+        cartPage=new CartPage(driver,wait);
     }
 
     @BeforeMethod
