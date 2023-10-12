@@ -568,4 +568,17 @@ public class SwagLabTests extends BasicTest {
         wait.withMessage("Should be redirected to the item's page")
                 .until(ExpectedConditions.urlContains("/inventory.html"));
     }
+    //Cart page sheet #31
+    @Test
+    public void verifyIfTheCheckoutButtonIsPresented() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        cartPage.waitForCheckoutButtonToBeVisible();
+    }
 }
