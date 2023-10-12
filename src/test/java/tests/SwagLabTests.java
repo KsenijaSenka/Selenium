@@ -386,7 +386,7 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnBurger();
         leftNavPage.waitXButton();
     }
-    ////Cart page sheet #19
+    //Cart page sheet #19
     @Test
     public void verifyIfTheEkisButtonsIsWorking () {
         String username = "standard_user";
@@ -400,5 +400,20 @@ public class SwagLabTests extends BasicTest {
         leftNavPage.waitXButton();
         leftNavPage.clickXButton();
         leftNavPage.waitLeftNavMenuDissapears();
+    }
+    //Cart page sheet #20
+    @Test
+    public void verifyIfTheItemsAddedIsPresented () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+
+        Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
+                "Added items should be on the page.");
     }
 }
