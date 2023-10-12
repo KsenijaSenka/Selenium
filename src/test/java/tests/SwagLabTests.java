@@ -612,4 +612,18 @@ public class SwagLabTests extends BasicTest {
         footer.waitForTwitterIconToBeVisible();
 
     }
+    //Cart page sheet #34
+    @Test
+    public void verifyIfTheFacebookButtonIsPresented () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        footer.scrollToFooter();
+        footer.waitForFacebookIconToBeVisible();
+
+    }
 }
