@@ -373,4 +373,17 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(doesBadgeExistAfterReset,
                 !doesBadgeExist, "Reset option should reset the app");
     }
+    //Cart page sheet #18
+    @Test
+    public void verifyIfTheEkisButtonIsPresented(){
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+        leftNavPage.waitXButton();
+    }
 }
