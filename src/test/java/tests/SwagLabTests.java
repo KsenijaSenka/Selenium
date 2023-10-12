@@ -352,4 +352,25 @@ public class SwagLabTests extends BasicTest {
                 "Should redirect to login page");
 
     }
+    //Cart page sheet #17
+    @Test
+    public void verifyIfResetAppStateIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        boolean doesBadgeExist = topNavPage.checkIfCartBadgeExists();
+
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+        leftNavPage.waitLeftNavMenu();
+        leftNavPage.clickResetAppState();
+        boolean doesBadgeExistAfterReset = topNavPage.checkIfCartBadgeExists();
+
+        Assert.assertEquals(doesBadgeExistAfterReset,
+                !doesBadgeExist, "Reset option should reset the app");
+    }
 }
