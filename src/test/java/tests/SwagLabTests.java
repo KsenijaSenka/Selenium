@@ -293,4 +293,23 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(leftNavPage.spellingOfOptions(),
                 "Spelling of options in menu is incorrect.");
     }
+    //Cart page sheet #14
+    @Test
+    public void verifyIfAllItemsOptionIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+
+        leftNavPage.waitLeftNavMenu();
+        leftNavPage.clickAllItems();
+
+        Assert.assertEquals(loginPage.getCurrentUrl(),
+                url + "/inventory.html",
+                "Should redirect to the products page.");
+    }
 }
