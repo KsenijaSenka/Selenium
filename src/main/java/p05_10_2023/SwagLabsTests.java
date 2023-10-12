@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -279,8 +280,34 @@ public class SwagLabsTests {
         Assert.assertEquals(statusCodeFacebook, 200, "Response code for Facebook should be 200");
         Assert.assertEquals(statusCodeLinkedin, 200, "Response code for Linkedin should be 200");
     }
+    //Test #11:(ZA VEZBANJE)  Test Default Name Sort (A-Z)
+    @Test
+    public void testDefaultNameSort(){
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        driver.findElement(By.name("user-name")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
+        driver.findElement(By.id("login-button")).click();
+
+        wait.until(ExpectedConditions.urlContains("/inventory.html"));
+        wait.withMessage("Url doesn't contain /inventory.html");
+
+        WebElement selectElement = driver.findElement(By.xpath("//select/option[1]"));
+        Assert.assertTrue(selectElement.isSelected(), "Elements should be sorted A-Z");
+
+//        List<WebElement>items= driver.findElements(By.className("inventory_item_name"));
+////        for (int i = 0; i < items.size(); i++) {
+////           items.a
+//        Assert.assertEquals(items.stream().sorted().sorted(), items.stream(), "Items should be sorted A-Z");
+
+
+
+    }
+
+
     @AfterClass
-    public void afterClass() {
-        driver.quit();
+   public void afterClass() {
+       driver.quit();
    }
 }

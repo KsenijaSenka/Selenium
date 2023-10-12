@@ -107,5 +107,20 @@ public void verifySuccessfulLogin() {
             Assert.assertEquals(loginPage.getCurrentUrl(),url+"cart.html",
                     "Url should be https://www.saucedemo.com/cart.html");
         }
+    //Cart Page sheet #2
+    @Test
+    public void verifyTheTitlePage() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+
+        Assert.assertEquals(inventoryPage.getCartPageTitle(),
+                "Swag Labs", "Title should be Swag Labs.");
+    }
     }
 
