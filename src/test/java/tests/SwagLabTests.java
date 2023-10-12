@@ -550,4 +550,22 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnCartButton();
         cartPage.waitForContinueShoppingButtonToBeVisible();
     }
+    //Cart page sheet #30
+    @Test
+    public void verifyIfTheContinueShoppingButtonIsWorking() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+
+        cartPage.waitForContinueShoppingButtonToBeVisible();
+        cartPage.clickContinueShoppingButton();
+
+        wait.withMessage("Should be redirected to the item's page")
+                .until(ExpectedConditions.urlContains("/inventory.html"));
+    }
 }
