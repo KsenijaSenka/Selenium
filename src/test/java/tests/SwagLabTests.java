@@ -386,4 +386,19 @@ public class SwagLabTests extends BasicTest {
         topNavPage.clickOnBurger();
         leftNavPage.waitXButton();
     }
+    ////Cart page sheet #19
+    @Test
+    public void verifyIfTheEkisButtonsIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+        leftNavPage.waitXButton();
+        leftNavPage.clickXButton();
+        leftNavPage.waitLeftNavMenuDissapears();
+    }
 }
