@@ -296,13 +296,6 @@ public class SwagLabsTests {
         WebElement selectElement = driver.findElement(By.xpath("//select/option[1]"));
         Assert.assertTrue(selectElement.isSelected(), "Elements should be sorted A-Z");
 
-//        List<WebElement>items= driver.findElements(By.className("inventory_item_name"));
-////        for (int i = 0; i < items.size(); i++) {
-////           items.a
-//        Assert.assertEquals(items.stream().sorted().sorted(), items.stream(), "Items should be sorted A-Z");
-
-
-
     }
 
 

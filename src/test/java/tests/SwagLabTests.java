@@ -122,5 +122,19 @@ public void verifySuccessfulLogin() {
         Assert.assertEquals(inventoryPage.getCartPageTitle(),
                 "Swag Labs", "Title should be Swag Labs.");
     }
+    //Cart page sheet #3
+    @Test
+    public void verifyTheTitleInHeader() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        Assert.assertEquals(topNavPage.getHeaderTitleText(),
+                "Swag Labs",
+                "Title in header should be Swag Labs");
+    }
     }
 
