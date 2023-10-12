@@ -276,4 +276,21 @@ public class SwagLabTests extends BasicTest {
         Assert.assertEquals(leftNavPage.getNumberOfMenuOptions(), 4,
                 "Total number of options in menu should be four.");
     }
+    //Cart page sheet #13
+    @Test
+    public void verifyTheSpellingOfAllOptionsInMenu () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+
+        leftNavPage.waitLeftNavMenu();
+
+        Assert.assertTrue(leftNavPage.spellingOfOptions(),
+                "Spelling of options in menu is incorrect.");
+    }
 }
