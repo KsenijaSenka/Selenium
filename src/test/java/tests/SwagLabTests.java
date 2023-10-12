@@ -459,4 +459,18 @@ public class SwagLabTests extends BasicTest {
         Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
                 "Price of the item in cart should be visible.");
     }
+    //Cart page sheet #24
+    @Test
+    public void verifyIfTheItemsQuantityIsPresented () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        Assert.assertTrue(cartPage.checkIfAddedItemsExist(),
+                "Quantity of the added item should be visible.");
+    }
 }
