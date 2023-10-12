@@ -640,4 +640,19 @@ public class SwagLabTests extends BasicTest {
         footer.waitForLinkedinIconToBeVisible();
 
     }
+    //Cart page sheet #36
+    @Test
+    public void verifyIfTheTwitterButtonIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        footer.scrollToFooter();
+        footer.waitForTwitterIconToBeVisible();
+        footer.clickOnTwitterIcon();
+        footer.redirectToTwitter();
+    }
 }
