@@ -521,4 +521,20 @@ public class SwagLabTests extends BasicTest {
         cartPage.waitForRemoveButtonToBeVisible();
 
     }
+    //Cart page sheet #28
+    @Test
+    public void verifyIfTheRemoveButtonIsWorking () {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        inventoryPage.clickAddToCart();
+        topNavPage.clickOnCartButton();
+        cartPage.clickOnRemoveButton();
+
+        Assert.assertFalse(cartPage.checkIfAddedItemsExist(),
+                "The item should disappear after removing");
+    }
 }
