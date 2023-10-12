@@ -170,4 +170,17 @@ public class SwagLabTests extends BasicTest {
         topNavPage.waitForCartIcon();
     }
 
+    //Cart page sheet #6
+    @Test
+    public void verifyIfTheHamburgerMenuButtonIsEnabled() {
+        String username = "standard_user";
+        String password = "secret_sauce";
+
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickOnLoginButton();
+        topNavPage.clickOnCartButton();
+        topNavPage.clickOnBurger();
+        Assert.assertTrue(topNavPage.isBurgerButtonEnabled(), "Hamburger button should be enabled");
+    }
 }
