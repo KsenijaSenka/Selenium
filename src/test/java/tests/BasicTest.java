@@ -29,6 +29,7 @@ public abstract class BasicTest {
     protected JavascriptExecutor js;
     protected TopNavPage topNavPage;
     protected CartPage cartPage;
+    protected Footer footer;
 
     @BeforeClass
     public void BeforeClass() {
@@ -47,6 +48,7 @@ public abstract class BasicTest {
         js = (JavascriptExecutor) driver;
         topNavPage=new TopNavPage(driver,wait);
         cartPage=new CartPage(driver,wait);
+        footer=new Footer(driver,wait);
     }
 
     @BeforeMethod
